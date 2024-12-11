@@ -4,10 +4,7 @@ from typing import cast, Dict
 from services.tkinter_ui.menu import assemble_menu
 from services.tkinter_ui.settings import assemble_settings
 
-def frame_select(
-    var: tk.StringVar,
-    frames: Dict[str, tk.Frame]
-):
+def frame_select(var: tk.StringVar, frames: Dict[str, tk.Frame]):
     value = var.get()
     to_pos = (-10e2, -10e2)
 
@@ -21,11 +18,7 @@ def frame_select(
             )
 
 
-def make_frame_selectors(
-        master: tk.Frame,
-        frame_var: tk.StringVar,
-        frames: Dict[str, tk.Frame]
-):
+def make_frame_selectors(master: tk.Frame, frame_var: tk.StringVar, frames: Dict[str, tk.Frame]):
     tk.Radiobutton(
         master=master,
         variable=frame_var,
@@ -43,18 +36,10 @@ def make_frame_selectors(
     ).pack()
 
 
-def run(
-    app: tk.Tk,
-    whisper_module,
-    llm_module
-):
+def run(app: tk.Tk):
     frame_var = tk.StringVar(value="menu")
 
-    menu = assemble_menu(
-        master=cast(tk.Frame, app),
-        whisper_module=whisper_module,
-        llm_module=llm_module
-    )
+    menu = assemble_menu(master=cast(tk.Frame, app),)
     settings = assemble_settings(master=cast(tk.Frame, app))
 
     frames = {

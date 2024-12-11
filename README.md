@@ -7,3 +7,4 @@ A tkinter-based project, developed for people to pass the interviews, coding qui
 It is developed because of my need in that project =)
 
 ### So please enjoy your stay!
+

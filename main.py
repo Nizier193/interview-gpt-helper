@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from services.llms.main import LLMModule
-from services.whisper.main import WhisperModule
+from services.whisper_code.main import WhisperTranscriber
 from services.tkinter_ui.base import run
 # Based on tkinter
 # Uses whisper to transcribe in stream mode
@@ -20,14 +20,7 @@ def main():
     app.geometry("500x500")
     app.title("interview-gpt-helper")
 
-    llm_module = LLMModule()
-    whisper_module = WhisperModule()
-
-    run(
-        app=app,
-        whisper_module=whisper_module,
-        llm_module=llm_module
-    )
+    run(app=app)
 
 if __name__ == "__main__":
     main()
